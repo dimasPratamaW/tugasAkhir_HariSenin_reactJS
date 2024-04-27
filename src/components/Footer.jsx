@@ -10,7 +10,7 @@ const Footer = () => {
           <img src={logo} alt="logo" className="h-auto max-w-[120px] w-full" />
         </figure>
       </div>
-      <div className="w-full flex flex-wrap md:flex-nowrap justify-center items-center gap-5 py-5 px-8">
+      <div className="w-full flex flex-wrap md:flex-nowrap justify-center items-start gap-5 py-5 px-8">
         <div className="grid grid-cols-2 place-items-start md:w-mx md:grid-cols-2 gap-3 w-full text-gray-300">
           {dataFooter.map((elm, i) => {
             return (
