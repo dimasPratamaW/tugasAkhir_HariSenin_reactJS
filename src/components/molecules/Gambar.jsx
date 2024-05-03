@@ -2,6 +2,7 @@ import React from "react";
 import hero from "../../assets/gambar/hero-gambar.png";
 import hero2 from "../../assets/gambar/hero-gambar-2.png";
 import play from "../../assets/gambar/hero-play.png";
+import { Link } from "react-router-dom";
 
 export default function Gambar() {
   return (
@@ -22,8 +23,8 @@ export default function Gambar() {
               />
             </div>
           </div>
-          <a
-            href="/pos_system.html"
+          <Link
+            to="/pos"
             target="_blank"
             rel="noopener noreferrer"
             className="absolute flex justify-center items-center top-2/4 left-2/4 -translate-x-2/4 md:w-24 md:h-24 h-14 w-14 bg-white rounded-full shadow-2xl"
@@ -35,7 +36,7 @@ export default function Gambar() {
               height="20"
               className="w-[45px] h-[45] md:w-[70px] md:h-[70px] object-cover"
             />
-          </a>
+          </Link>
         </div>
       </section>
     </>
