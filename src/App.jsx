@@ -1,18 +1,13 @@
-// App.jsx
-import React from 'react';
-import Button from './Component/ComplexMeetIntuitif.jsx';
-
-const App = () => {
-  const handleButtonClick = () => {
-    // Logika ketika tombol ditekan
-  };
-
+import "./index.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+function App() {
   return (
-    <div>
-      <h1>Contoh Penggunaan Komponen Button</h1>
-      <Button label="Klik Saya" onClick={handleButtonClick} />
-    </div>
+    <>
+      <Navbar />
+      <Footer />
+    </>
   );
-};
+}
 
 export default App;
