@@ -4,6 +4,7 @@ import { List, Button } from "antd";
 
 export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   const [cartItems, setCartItems] = useState([]);
+  let updatedCartItems = [...cartItems];
 
   useEffect(() => {
     setCartItems(
@@ -15,13 +16,12 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   }, [listItemChoosen]);
 
   const handleIncrement = (index) => {
-    const updatedCartItems = [...cartItems];
+    
     updatedCartItems[index].amount += 1;
     setCartItems(updatedCartItems);
   };
 
   const handleDecrement = (index) => {
-    const updatedCartItems = [...cartItems];
     if (updatedCartItems[index].amount > 0) {
       updatedCartItems[index].amount -= 1;
       setCartItems(updatedCartItems);
@@ -29,7 +29,6 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   };
 
   const handleRemoveItem = (index) => {
-    const updatedCartItems = [...cartItems];
     updatedCartItems.splice(index, 1);
     setCartItems(updatedCartItems);
     // Update listItemChoosen in the main file
