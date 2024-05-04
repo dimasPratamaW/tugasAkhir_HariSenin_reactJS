@@ -41,7 +41,7 @@ export default function ContentLeftPos() {
         <div className="grid grid-cols-3 border-[1px] border-solid border-gray-500">
           {dataContent.map((item, i) => {
             return (
-              <button className="px-3 py-4 flex justify-center items-center border-[1px] border-solid border-gray-500" key={i}>
+              <button className="gap-3 px-3 py-4 flex justify-center items-center border-[1px] border-solid border-gray-500" key={i}>
                 <span>{item.title}</span>
                 <img src={item.image} alt={item.title} className="w-[25px]" />
               </button>
