@@ -1,5 +1,5 @@
 import React from "react";
-import star from "../../assets/gambar/start.png";
+import star from "../../assets/gambar/star.png";
 
 
 export default function Features() {
