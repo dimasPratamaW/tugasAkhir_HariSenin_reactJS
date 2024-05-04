@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TopPos from '../../components/organisems/TopPos';
 import NominalPos from '../../components/organisems/NominalPos';
 import SubmitPos from '../../components/organisems/SubmitPos';
@@ -8,15 +8,70 @@ import ListItem from '../../components/organisems/ListItem';
 import Footer from '../../components/Footer';
 
 export default function PosPage() {
+  const itemsInStore = [
+    {
+      idItem: 1,
+      Name: "item Test 1",
+      Price: 99.75,
+      pictureItem: "../../assets/1.png"
+    },
+    {
+      idItem: 2,
+      Name: "item Test 2",
+      Price: 169.05
+    },
+    {
+      idItem: 3,
+      Name: "item Test 3",
+      Price: 99.75
+    },
+    {
+      idItem: 4,
+      Name: "item Test 4",
+      Price: 99.75
+    },
+    {
+      idItem: 5,
+      Name: "item Test 5",
+      Price: 169.05
+    },
+    {
+      idItem: 6,
+      Name: "item Test 6",
+      Price: 99.75
+    },
+    {
+      idItem: 7,
+      Name: "item Test 7",
+      Price: 169.05
+    },
+    {
+      idItem: 8,
+      Name: "item Test 8",
+      Price: 99.75
+    },
+  ];
+
+  const [listItemChoosen, setItemsChoose] = useState([]);
+
+  function onClick(item) {
+    if (!listItemChoosen.some((chosenItem) => chosenItem.idItem === item.idItem)) {
+      setItemsChoose([...listItemChoosen, item]);
+    }
+  }
+
+  useEffect(() => {
+    console.log("the got sent",listItemChoosen);
+  }, [listItemChoosen]);
   return (
     <>
       <div className="font-serif">
         <TopPos />
         <hr />
         <div className="flex flex-row font-serif mt-20">
-          <div className="bg-stone-600 w-2/5 h-lvh block">
+          <div className="w-2/5 h-lvh block">
             <div className="flex flex-col h-screen">
-              <EmptyOrderPos />
+              <EmptyOrderPos listItemChoosen={listItemChoosen} />
               <div className="flex-grow flex-row font-bold">
                 <div className="bg-white h-full items-center justify-center flex flex-col">
                   <ContentLeftPos />
@@ -54,7 +109,7 @@ export default function PosPage() {
               <div className="bg-[#d9dade] h-full p-2 flex flex-col gap-2">
                 {/* LAYER 1 */}
                 <div className="flex gap-2 ">
-                  <ListItem />
+                  <ListItem itemsInStore={itemsInStore} onClick={onClick} />
                 </div>
               </div>
             </div>
@@ -62,7 +117,7 @@ export default function PosPage() {
           {/* RIGHT */}
         </div>
         {/* FOOTER */}
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

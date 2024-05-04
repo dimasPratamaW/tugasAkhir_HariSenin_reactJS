@@ -1,64 +1,7 @@
+import React, { useEffect } from 'react';
 
-import { useEffect, useState } from 'react';
+export default function ListItem({ itemsInStore, onClick }) {
 
-const itemsInStore = [
-    {
-        idItem: 1,
-        Name: "item Test 1",
-        Price: 99.75,
-        pictureItem: "../../assets/1.png"
-    },
-    {
-        idItem: 2,
-        Name: "item Test 2",
-        Price: 169.05
-    },
-    {
-        idItem: 3,
-        Name: "item Test 3",
-        Price: 99.75
-    },
-    {
-        idItem: 4,
-        Name: "item Test 4",
-        Price: 99.75
-    },
-    {
-        idItem: 5,
-        Name: "item Test 5",
-        Price: 169.05
-    },
-    {
-        idItem: 6,
-        Name: "item Test 6",
-        Price: 99.75
-    },
-    {
-        idItem: 7,
-        Name: "item Test 7",
-        Price: 169.05
-    },
-    {
-        idItem: 8,
-        Name: "item Test 8",
-        Price: 99.75
-    },
-];
-
-export default function ListItem() {
-    const [listItemChoosen, setItemsChoose] = useState([]);
-
-    function onClick(item) {
-        // Check if the item's id is already in the list
-        if (!listItemChoosen.some((chosenItem) => chosenItem.idItem === item.idItem)) {
-            // If not, add the item to the list
-            setItemsChoose([...listItemChoosen, item]);
-        }
-    }
-    // for testing the listitemchosen have been updated
-    // useEffect(() => {
-    //     console.log(listItemChoosen);
-    // }, [listItemChoosen]);
     return (
         <>
             <div>
