@@ -1,6 +1,7 @@
 import Button from "../Elements/Button/Index.jsx";
 import InputForm from "../Elements/Input/Index.jsx";
 
+
 const FormLogin = () => {
   const handleLogin = (event)=> {
     localStorage.setItem("email", event.target.email.value);
@@ -15,16 +16,16 @@ const FormLogin = () => {
           <InputForm
             label="Email" 
             type="email" 
-            placeholder="example@mail.com" 
+            placeholder="Email" 
             name="email"
             />        
-            <InputForm
+            <InputForm.InputPassword
             label="Password" 
             type="password" 
-            placeholder="******" 
+            placeholder="" 
             name="password"
-            />  
-          <Button classname="bg-blue-500 w-full" type="submit">Login</Button>
+            />
+          <Button classname="bg-[#604058] w-full" type="submit">Masuk</Button>
         </form>
     );
 };
