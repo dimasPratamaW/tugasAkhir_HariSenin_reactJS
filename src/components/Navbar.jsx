@@ -47,7 +47,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <Button onClick={toggleFunc} onho className="grid place-content-center md:hidden">
+        <Button onClick={toggleFunc} className="grid place-content-center md:hidden">
           {icon ? <CloseOutlined style={{ color: "#000", fontSize: "16px" }} /> : <MenuOutlined style={{ color: "#000", fontSize: "16px" }} />}
         </Button>
       </div>
