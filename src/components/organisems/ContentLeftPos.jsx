@@ -6,58 +6,59 @@ import Barcode from "../../assets/icon/barcode.svg";
 import Reset from "../../assets/icon/reset.svg";
 import Reward from "../../assets/icon/reward.svg";
 import EWallet from "../../assets/icon/eWallet.svg";
-import Link from "../../assets/icon/link.svg";
+import Order from "../../assets/icon/link.svg";
 
 export default function ContentLeftPos() {
-  const dataContent = [
+  const dataLeftContent = [
     {
-      title: "Customer Note",
-      image: Note,
+      label: "Customer Note",
+      icon: Note,
     },
     {
-      title: "Refund",
-      image: Refund,
+      label: "Refund",
+      icon: Refund,
     },
     {
-      title: "Info",
-      image: Info,
+      label: "Info",
+      icon: Info,
     },
     {
-      title: "Enter Code",
-      image: Barcode,
+      label: "Enter Code",
+      icon: Barcode,
     },
     {
-      title: "Reset Programs",
-      image: Reset,
+      label: "Reset Programs",
+      icon: Reset,
     },
     {
-      title: "Reward",
-      image: Reward,
+      label: "Reward",
+      icon: Reward,
     },
   ];
+
   return (
     <>
-      <div className="w-full h-max">
-        <div className="grid grid-cols-3 border-[1px] border-solid border-gray-500">
-          {dataContent.map((item, i) => {
-            return (
-              <button className="gap-3 px-3 py-4 flex justify-center items-center border-[1px] border-solid border-gray-500" key={i}>
-                <span>{item.title}</span>
-                <img src={item.image} alt={item.title} className="w-[25px]" />
-              </button>
-            );
-          })}
-        </div>
-        <div className="flex justify-center items-center w-full border-[1px] border-solid border-gray-500 ">
-          <button className="gap-3 px-4 py-5 border-[1px] border-solid border-gray-500 w-full flex justify-center items-center">
-            <span>eWallet</span>
-            <img src={EWallet} alt="eWallet" />
-          </button>
-          <button className="gap-3 px-4 py-5 border-[1px] border-solid border-gray-500 w-full flex justify-center items-center">
-            <span>Order</span>
-            <img src={Link} alt="Order" className="w-[20px]" />
-          </button>
-        </div>
+      <div className="grid grid-cols-3 items-center w-full h-max text-sm">
+        {dataLeftContent.map((elm, i) => {
+          return (
+            <div key={i} className="w-full grid place-content-center py-4 px-3 border-[1px] border-solid border-black">
+              <div className="flex justify-center items-center gap-2">
+                <img className="w-[20px]" src={elm.icon} alt={elm.label} />
+                <span className="font-bold">{elm.label}</span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="grid grid-cols-2 w-full h-max">
+        <button className=" flex justify-center items-center gap-2 py-5 px-3 border-[1px] border-solid border-black w-full">
+          <img src={EWallet} alt="ewallet" />
+          <span className="font-bold">eWallet</span>
+        </button>
+        <button className=" flex justify-center items-center gap-2 py-5 px-3 border-[1px] border-solid border-black w-full">
+          <img className="w-[20px]" src={Order} alt="order" />
+          <span className="font-bold">Quatation/Order</span>
+        </button>
       </div>
     </>
   );

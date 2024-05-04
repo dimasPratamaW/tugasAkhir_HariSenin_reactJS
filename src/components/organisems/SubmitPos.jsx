@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import User from "../../assets/icon/user.svg";
 import Arrow from "../../assets/icon/arrowPayment.svg";
