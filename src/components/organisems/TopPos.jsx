@@ -1,11 +1,18 @@
+import React from "react";
 import Profile from "../../assets/icon/profil.png";
 import Ping from "../../assets/icon/ping.svg";
 import Exit from "../../assets/icon/exit.png";
 
 export default function TopPos() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggler = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <div className="flex h-9 items-center font-serif gap-3 mb-5">
+      <div className="flex h-9 items-center font-serif gap-3">
         <div className="grow">
           <p className="pl-5 font-bold text-lg text-[#878787]">
             <span className="text-[#724b68] text-2xl">o</span>
@@ -34,6 +41,6 @@ export default function TopPos() {
           <a href="#">Exit</a>
         </div>
       </div>
-    </>
+    </header>
   );
 }

@@ -1,4 +1,5 @@
 import RootLayouts from "../../layouts/RootLayouts";
+import { Link } from "react-router-dom";
 
 export default function login() {
   return (
@@ -16,7 +17,9 @@ export default function login() {
                 <p className="mt-4 w-full">Password</p>
                 <input className="p-2 rounded-xl w-full border" type="password" name="password" placeholder="password" />
               </div>
-              <button className="mt-4 bg-gray-500 rounded-md text-white py-2 hover:bg-gray-800">Login</button>
+              <Link to="/Pos" class="mt-4 bg-gray-500 rounded-md text-white py-2 hover:bg-gray-800 text-center">
+                Login
+              </Link>
             </form>
 
             <div className="mt-2 grid grid-cols-2 items-center text-xs mb-8">
