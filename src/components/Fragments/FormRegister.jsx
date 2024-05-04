@@ -4,31 +4,25 @@ import InputForm from "../Elements/Input/Index.jsx";
 const FormRegister = () => {
     return (
         <form action="">
-          <InputForm
-            label="Fullname" 
-            type="text" 
-            placeholder="Insert Your Fullname" 
-            name="fullname"
-            /> 
-          <InputForm
-            label="Email" 
+           <InputForm
+            label="Email Anda" 
             type="email" 
-            placeholder="example@mail.com" 
+            placeholder="Email" 
             name="email"
-            />        
-            <InputForm
+            />     
+          <InputForm
+            label="Nama Anda" 
+            type="text" 
+            placeholder="Misalnya John Doe" 
+            name="fullname"
+            />   
+            <InputForm.InputPassword
             label="Password" 
             type="password" 
-            placeholder="******" 
+            placeholder="" 
             name="password"
             />
-            <InputForm
-            label="Confirm Password" 
-            type="password" 
-            placeholder="******" 
-            name="confirmPassword"
-            />   
-          <Button classname="bg-blue-500 w-full">Register</Button>
+          <Button classname="bg-[#604058] rounded-md w-full">Register</Button>
         </form>
     );
 };

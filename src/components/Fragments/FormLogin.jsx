@@ -25,7 +25,7 @@ const FormLogin = () => {
             placeholder="" 
             name="password"
             />
-          <Button classname="bg-[#604058] w-full" type="submit">Masuk</Button>
+          <Button classname="bg-[#604058] rounded-md w-full" type="submit">Masuk</Button>
         </form>
     );
 };

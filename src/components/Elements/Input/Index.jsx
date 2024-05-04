@@ -24,6 +24,7 @@ const InputPassword = (props) => {
             <Label htmlFor={name}>{label}</Label>
             <div className='flex flex-row focus:outline-none'>    
                 <Input name={name}
+                classname='rounded-l-lg'
                 type={showPassword ? 'text' : 'password'} 
                 placeholder={placeholder}/>
                 <Button classname="bg-[#017e84] rounded-r-lg border-[#017e84] cursor-pointer">

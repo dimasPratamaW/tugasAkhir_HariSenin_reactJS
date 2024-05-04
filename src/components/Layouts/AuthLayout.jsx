@@ -1,11 +1,14 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 const AuthLayout = (props) => {
     const {children, type} = props;
     return (
-      <div className="flex justify-center min-h-screen items-center">
-        <div className="flex flex-col w-full max-w-xs">
+      <div className="flex flex-col justify-center min-h-screen items-center">
+        <Navbar/>
+        <div className="flex flex-col pt-20 w-full max-w-xs">
           <h1 className="self-center text-5xl font-bold mb-2 text-[#714b67]">o<span className='text-[#6C757D]'>doo</span></h1>
           <p className="font-sans text-[#0e616e] bg-[#d1ecf1] border-[#b9e3ea] p-4 mb-8 place-self-center rounded-[0.625rem]">
           Akses dan kelola instance dari akun Odoo ini.
@@ -19,6 +22,7 @@ const AuthLayout = (props) => {
               </Link>
           </p>  
         </div>
+        <Footer/>
       </div>
     );
 };

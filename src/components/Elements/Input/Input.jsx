@@ -3,11 +3,11 @@ import propTypes from 'prop-types';
 // import { FaEyeSlash } from "react-icons/fa";
 
 const Input = (props) => {
-    const { type, placeholder, name} = props;
+    const { classname="rounded-md", type, placeholder, name} = props;
     return (
     <input
         type={type}
-        className={`text-base border border-slate-400  rounded-l-lg w-full py-2 px-3 text-[#111827] placeholder:opacity-85`}
+        className={`text-base border h-11 border-slate-400 ${classname} w-full py-2 px-3 text-[#111827] placeholder:opacity-85`}
         placeholder={placeholder}
         name={name}
         id={name}
