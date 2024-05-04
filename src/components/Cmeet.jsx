@@ -135,6 +135,39 @@ const Cmeet = () => {
         </div>
        </section>
 
+       <section class="container max-w-[580px] md:max-w-[900px] mx-auto flex flex-col items-center gap-9 mt-20">
+        <div class="max-w-[82.5 rem] mx-auto">
+          <div class="justify-between">
+            <div class="">
+              <h2 class="text-4xl py-3 font-bold font-primary text-center md:text-7xl">Penjualan
+                <span class="font-bold text-red-500">cross-channel</span>
+              </h2>
+              <p class="text-xl text-left font-light">
+                <span class="font-semibold">Interface yang memiliki semuanya:</span> sangat intuitif sehingga siapapun
+                dapat mengusainya dalam hitungan menit, namun di penuhi opsi yang mencengangkan. Tangani tranksaksi
+                apapun dengan mulus dan fokus pada apa yang terpenting pelanggan.
+              </p>
+            </div>
+            <div class="justify-center">
+              <div class="flex flex-row ">
+                <div class="flex-1 items-center">
+                  <img src="https://odoocdn.com/openerp_website/static/src/img/apps/pos/cross_channel_selling_1.webp"
+                    alt="" class="object-scale-down w-[30rem]" loading="lazy"/>
+                </div>
+                <div class="flex-1 flex items-center self-center justify-center">
+                  <img src="https://odoocdn.com/openerp_website/static/src/img/arrows/arrow_sm_03.svg" alt="arah panah"
+                    class="rotate-[270deg] transform-gpu" loading="lazy"/>
+                </div>
+                <div class="flex-1">
+                  <img src="https://odoocdn.com/openerp_website/static/src/img/apps/pos/cross_channel_selling_2.webp"
+                    alt="" class="object-scale-down w-[30rem] h-auto" loading="lazy"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
        
 
 </React.Fragment>
