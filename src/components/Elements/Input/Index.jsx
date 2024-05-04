@@ -26,7 +26,7 @@ const InputPassword = (props) => {
                 <Input name={name}
                 type={showPassword ? 'text' : 'password'} 
                 placeholder={placeholder}/>
-                <Button classname="bg-[#017e84] border-[#017e84] cursor-pointer">
+                <Button classname="bg-[#017e84] rounded-r-lg border-[#017e84] cursor-pointer">
                 {showPassword ? <FaEye onClick={() => setShowPassword(!showPassword)}/>
                 : <FaEyeSlash onClick={() => setShowPassword(!showPassword)}/>}
                 </Button>

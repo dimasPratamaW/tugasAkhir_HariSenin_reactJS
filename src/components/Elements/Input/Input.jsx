@@ -7,7 +7,7 @@ const Input = (props) => {
     return (
     <input
         type={type}
-        className={`text-base border border-slate-400  rounded w-full py-2 px-3 text-[#111827] placeholder:opacity-85`}
+        className={`text-base border border-slate-400  rounded-l-lg w-full py-2 px-3 text-[#111827] placeholder:opacity-85`}
         placeholder={placeholder}
         name={name}
         id={name}
