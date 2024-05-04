@@ -94,7 +94,7 @@ const Cmeet = () => {
 </section>
 
 
-<section class="container max-w-[36.25rem] md:max-w-[56.25rem] mx-auto flex flex-col items-center gap-9">
+<section class="container max-w-[36.25rem] md:max-w-[56.25rem] mx-auto flex flex-col items-center gap-9 mt-20">
         <div class="max-w-[82.5 rem] mx-auto">
           <div class="flex flex-col justify-between gap-9 md:flex-row">
 
