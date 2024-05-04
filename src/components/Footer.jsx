@@ -1,4 +1,4 @@
-import dataFooter from "./dataFooter";
+import dataFooter from "../lib/dataFooter";
 import logo from "../assets/gambar/logo.png";
 import bendera from "../assets/gambar/bendera.png";
 import { FacebookOutlined, GithubOutlined, TwitterOutlined } from "@ant-design/icons";
