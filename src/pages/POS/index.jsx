@@ -60,8 +60,12 @@ export default function PosPage() {
     }
   }
 
+  const handleSetListItemChoosen = (updatedList) => {
+    setItemsChoose(updatedList);
+  };
+
   useEffect(() => {
-    console.log("the got sent",listItemChoosen);
+    console.log("the got sent", listItemChoosen);
   }, [listItemChoosen]);
   return (
     <>
@@ -71,7 +75,10 @@ export default function PosPage() {
         <div className="flex flex-row font-serif mt-20">
           <div className="w-2/5 h-lvh block">
             <div className="flex flex-col h-screen">
-              <EmptyOrderPos listItemChoosen={listItemChoosen} />
+              <EmptyOrderPos
+                listItemChoosen={listItemChoosen}
+                setListItemChoosen={handleSetListItemChoosen}
+              />
               <div className="flex-grow flex-row font-bold">
                 <div className="bg-white h-full items-center justify-center flex flex-col">
                   <ContentLeftPos />

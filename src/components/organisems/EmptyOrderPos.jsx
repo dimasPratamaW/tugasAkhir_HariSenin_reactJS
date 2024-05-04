@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import cartImage from "../../assets/img/shopping_cart.svg";
 import { List, Button } from "antd";
 
-export default function EmptyOrderPos({ listItemChoosen }) {
+export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
@@ -32,6 +32,8 @@ export default function EmptyOrderPos({ listItemChoosen }) {
     const updatedCartItems = [...cartItems];
     updatedCartItems.splice(index, 1);
     setCartItems(updatedCartItems);
+    // Update listItemChoosen in the main file
+    setListItemChoosen(updatedCartItems);
   };
 
   useEffect(() => {
