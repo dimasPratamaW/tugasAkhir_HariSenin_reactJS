@@ -1,26 +1,90 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TopPos from '../../components/organisems/TopPos';
 import NominalPos from '../../components/organisems/NominalPos';
 import SubmitPos from '../../components/organisems/SubmitPos';
 import ContentLeftPos from '../../components/organisems/ContentLeftPos';
 import EmptyOrderPos from '../../components/organisems/EmptyOrderPos';
+import ListItem from '../../components/organisems/ListItem';
+import Footer from '../../components/Footer';
 
 export default function PosPage() {
+  const itemsInStore = [
+    {
+      idItem: 1,
+      Name: "item Test 1",
+      Price: 99.75,
+      pictureItem: "../../assets/1.png"
+    },
+    {
+      idItem: 2,
+      Name: "item Test 2",
+      Price: 169.05
+    },
+    {
+      idItem: 3,
+      Name: "item Test 3",
+      Price: 99.75
+    },
+    {
+      idItem: 4,
+      Name: "item Test 4",
+      Price: 99.75
+    },
+    {
+      idItem: 5,
+      Name: "item Test 5",
+      Price: 169.05
+    },
+    {
+      idItem: 6,
+      Name: "item Test 6",
+      Price: 99.75
+    },
+    {
+      idItem: 7,
+      Name: "item Test 7",
+      Price: 169.05
+    },
+    {
+      idItem: 8,
+      Name: "item Test 8",
+      Price: 99.75
+    },
+  ];
+
+  const [listItemChoosen, setItemsChoose] = useState([]);
+
+  function onClick(item) {
+    if (!listItemChoosen.some((chosenItem) => chosenItem.idItem === item.idItem)) {
+      setItemsChoose([...listItemChoosen, item]);
+    }
+  }
+
+  const handleSetListItemChoosen = (updatedList) => {
+    setItemsChoose(updatedList);
+  };
+
+  useEffect(() => {
+    console.log("the got sent", listItemChoosen);
+  }, [listItemChoosen]);
   return (
     <>
       <div className="font-serif">
-        <TopPos/>
+        <TopPos />
         <hr />
-        <div className="flex flex-row font-serif">
-          <div className="bg-stone-600 w-2/5 h-lvh block">
+        <div className="flex flex-row font-serif mt-20">
+          <div className="w-2/5 h-lvh block">
             <div className="flex flex-col h-screen">
-              <EmptyOrderPos/>
+              <EmptyOrderPos
+                listItemChoosen={listItemChoosen}
+                setListItemChoosen={handleSetListItemChoosen}
+              />
               <div className="flex-grow flex-row font-bold">
                 <div className="bg-white h-full items-center justify-center flex flex-col">
-                  <ContentLeftPos/>
+                  <ContentLeftPos />
                   <div className="flex flex-row w-full h-full">
-                    <SubmitPos/>
-                    <NominalPos/>
+                    <SubmitPos />
+                    <NominalPos />
                   </div>
                 </div>
               </div>
@@ -44,7 +108,7 @@ export default function PosPage() {
               </div>
               {/* SEARCH PRODUCT */}
               <div className="flex ">
-                <input className="border-2 rounded-lg" type="search" placeholder="          Search Product" name="" id="" />
+                <input className="border-2 rounded-lg" type="search" placeholder=" Search Product" name="" id="" />
               </div>
             </div>
             {/* LIST PRODUCT */}
@@ -52,59 +116,7 @@ export default function PosPage() {
               <div className="bg-[#d9dade] h-full p-2 flex flex-col gap-2">
                 {/* LAYER 1 */}
                 <div className="flex gap-2 ">
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/1.png" alt="" />
-                    <p className="font-bold">Corner Desk Left Sit</p>
-                    <p className="text-[#724b68] font-bold">$ 99.75</p>
-                  </button>
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/2.png" alt="" />
-                    <p className="font-bold">Corner Desk Right Sit</p>
-                    <p className="text-[#724b68] font-bold">$ 169.05</p>
-                  </button>
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/3.png" alt="" />
-                    <p className="font-bold">Cuztomizable Desk...</p>
-                    <p className="text-[#724b68] font-bold">$ 920.46</p>
-                  </button>
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/5.png" alt="" />
-                    <p className="font-bold">Cuztomizable Desk(Custom...</p>
-                    <p className="text-[#724b68] font-bold">$ 862.50</p>
-                  </button>
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/5.png" alt="" />
-                    <p className="font-bold">Cuztomizable Desk(Custom...</p>
-                    <p className="text-[#724b68] font-bold">$ 862.50</p>
-                  </button>
-                </div>
-                {/* LAYER 2 */}
-                <div className="flex gap-2 ">
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/4.png" alt="" />
-                    <p className="font-bold">Cuztomizable Desk(Steel,...</p>
-                    <p className="text-[#724b68] font-bold">$ 862.50</p>
-                  </button>
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/5.png" alt="" />
-                    <p className="font-bold">Cuztomizable Desk(Custom...</p>
-                    <p className="text-[#724b68] font-bold">$ 862.50</p>
-                  </button>
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/6.png" alt="" />
-                    <p className="font-bold">Desk Combination</p>
-                    <p className="text-[#724b68] font-bold">$ 517.50</p>
-                  </button>
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/7.png" alt="" />
-                    <p className="font-bold">Four Person <br /> Desk</p>
-                    <p className="text-[#724b68] font-bold">$ 2,702.50</p>
-                  </button>
-                  <button className="flex-col  bg-white p-2 text-left">
-                    <img className="" src="img/8.png" alt="" />
-                    <p className="font-bold">Lily Vingroom</p>
-                    <p className="text-[#724b68] font-bold">$ 0.00</p>
-                  </button>
+                  <ListItem itemsInStore={itemsInStore} onClick={onClick} />
                 </div>
               </div>
             </div>
@@ -112,34 +124,7 @@ export default function PosPage() {
           {/* RIGHT */}
         </div>
         {/* FOOTER */}
-        <div className="flex justify-center items-center gap-1 bg-stone-600 h-10">
-          <div>
-            <img className="h-5" src="icon/cash.svg" alt="" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold">USD</p>
-          </div>
-          <div className="h-full w-[1px] bg-white"></div>
-          <div>
-            <p className="text-sm font-semibold">1,000,000</p>
-          </div>
-          <div className="h-full w-[1px] bg-white"></div>
-          <div>
-            <p className="text-sm font-semibold">ITEMS</p>
-          </div>
-          <div className="h-full w-[1px] bg-white"></div>
-          <div>
-            <p className="text-sm font-semibold">0</p>
-          </div>
-          <div className="h-full w-[1px] bg-white"></div>
-          <div>
-            <p className="text-sm font-semibold">NOTES</p>
-          </div>
-          <div className="h-full w-[1px] bg-white"></div>
-          <div>
-            <p className="text-sm font-semibold">0</p>
-          </div>
-        </div>
+        <Footer />
       </div>
     </>
   );
