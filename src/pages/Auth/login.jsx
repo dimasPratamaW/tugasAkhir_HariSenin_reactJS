@@ -1,5 +1,7 @@
 import React from "react";
 import RootLayouts from "../../layouts/RootLayouts";
+import { Link } from "react-router-dom";
+
 
 export default function login() {
   return (
@@ -29,9 +31,9 @@ export default function login() {
                   placeholder="password"
                 />
               </div>
-              <button class="mt-4 bg-gray-500 rounded-md text-white py-2 hover:bg-gray-800">
+              <Link to="/Pos" class="mt-4 bg-gray-500 rounded-md text-white py-2 hover:bg-gray-800 text-center">
                 Login
-              </button>
+              </Link>
             </form>
 
             <div class="mt-2 grid grid-cols-2 items-center text-xs mb-8">

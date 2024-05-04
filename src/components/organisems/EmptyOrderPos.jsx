@@ -16,7 +16,7 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   }, [listItemChoosen]);
 
   const handleIncrement = (index) => {
-    
+
     updatedCartItems[index].amount += 1;
     setCartItems(updatedCartItems);
   };
@@ -35,9 +35,7 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
     setListItemChoosen(updatedCartItems);
   };
 
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
+
 
   if (cartItems.length === 0) {
     return (
@@ -52,26 +50,43 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
     );
   }
 
+  // Calculate total value for each item (amount * price)
+  const itemValues = cartItems.map(item => item.amount * item.Price);
+
+  // Sum up all the values in the array
+  const totalValue = itemValues.reduce((acc, curr) => acc + curr, 0);
+
   return (
-    <List
-      className="demo-loadmore-list"
-      itemLayout="horizontal"
-      dataSource={cartItems}
-      renderItem={(item, index) => (
-        <List.Item
-          actions={[
-            <Button key="decrement" onClick={() => handleDecrement(index)}>-</Button>,
-            <span key="amount">{item.amount}</span>,
-            <Button key="increment" onClick={() => handleIncrement(index)}>+</Button>,
-            <Button key="remove" onClick={() => handleRemoveItem(index)}>Remove</Button>
-          ]}
-        >
-          <List.Item.Meta
-            title={<a href="https://ant.design" className="font-bold">{item.Name}</a>}
-            description={<p className="font-bold">$ {item.Price}</p>}
+    <>
+      <div className=" flex-grow border-2 border-slate-300">
+        <div className="bg-white justify-center ">
+          <List
+            itemLayout="horizontal"
+            dataSource={cartItems}
+            renderItem={(item, index) => (
+              <List.Item
+                actions={[
+                  <Button key="decrement" onClick={() => handleDecrement(index)}>-</Button>,
+                  <span key="amount">{item.amount}</span>,
+                  <Button key="increment" onClick={() => handleIncrement(index)}>+</Button>,
+                  <Button key="remove" onClick={() => handleRemoveItem(index)}>Remove</Button>
+                ]}
+              >
+                <List.Item.Meta
+                  title={<a href="https://ant.design" className="font-bold">{item.Name}</a>}
+                  description={<p className="font-bold">$ {item.Price}</p>}
+                />
+              </List.Item>
+            )}
           />
-        </List.Item>
-      )}
-    />
+        </div>
+      </div>
+      <div className="bg-lime-200 border-2 border-black">
+        <div className="flex-row justify-items-end items-end ml-2">
+          <div className="font-bold text-2xl">Total</div>
+          <div className="font-bold text-xl">$ {totalValue}</div>
+        </div>
+      </div>
+    </>
   );
 }
