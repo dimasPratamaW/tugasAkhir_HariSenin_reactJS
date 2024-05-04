@@ -9,7 +9,7 @@ import star from '../assets/gambar/start.png'
 const Cmeet = () => {
   return (
     <React.Fragment>
-    <section class="w-full pb-32">
+    <section class="w-full pb-32 mt-24">
     <div class="container max-w-[580px] md:max-w-[900px] mx-auto flex flex-col items-center gap-9">
   <div class="flex w-full justify-center items-center text-4xl font-primary md:text-7xl gap-4">
     <p>Kompleks</p>
@@ -70,7 +70,7 @@ const Cmeet = () => {
 </section>
 
 
-<section class="container max-w-[580px] md:max-w-[900px] mx-auto flex flex-col items-center gap-9">
+<section class="container max-w-[580px] md:max-w-[900px] mx-auto flex flex-col items-center gap-9 mt-20">
 <div class="mx-auto">
   <div class="flex flex-row justify-between">
     <>
@@ -94,7 +94,7 @@ const Cmeet = () => {
 </section>
 
 
-<section class="container max-w-[36.25rem] md:max-w-[56.25rem] mx-auto flex flex-col items-center gap-9 mt-20">
+<section class="container max-w-[36.25rem] md:max-w-[56.25rem] mx-auto flex flex-col items-center gap-9 mt-24">
         <div class="max-w-[82.5 rem] mx-auto">
           <div class="flex flex-col justify-between gap-9 md:flex-row">
 
@@ -135,7 +135,7 @@ const Cmeet = () => {
         </div>
        </section>
 
-       <section class="container max-w-[580px] md:max-w-[900px] mx-auto flex flex-col items-center gap-9 mt-20">
+       <section class="container max-w-[580px] md:max-w-[900px] mx-auto flex flex-col items-center gap-9 mt-24">
         <div class="max-w-[82.5 rem] mx-auto">
           <div class="justify-between">
             <div class="">
