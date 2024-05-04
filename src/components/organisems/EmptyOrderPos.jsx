@@ -55,7 +55,7 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
 
   return (
     <>
-      <div className=" flex-grow border-2 border-slate-300">
+      <div className=" flex-grow border-2 border-slate-300 px-3 max-h-[40%] overflow-scroll">
         <div className="bg-white justify-center ">
           <List
             itemLayout="horizontal"
@@ -88,7 +88,7 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
           />
         </div>
       </div>
-      <div className="bg-lime-200 border-2 border-black">
+      <div className="bg-lime-200 border-2 border-black sticky bottom-0 z-10">
         <div className="flex-row justify-items-end items-end ml-2">
           <div className="font-bold text-2xl">Total</div>
           <div className="font-bold text-xl">$ {totalValue}</div>
