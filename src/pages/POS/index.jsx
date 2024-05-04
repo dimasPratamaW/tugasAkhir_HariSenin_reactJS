@@ -27,9 +27,9 @@ export default function PosPage() {
   return (
     <>
       <RootLayouts>
-        <div className="w-full h-screen mt-24">
-          <div className="container px-8 py-10 flex justify-center items-center gap-8 mx-auto shadow-2xl  h-full overflow-hidden">
-            <div className="w-full h-full max-w-[50%] shadow-xl">
+        <div className="w-full h-max md:h-screen mt-24">
+          <div className="container px-8 py-10 grid md:flex md:justify-center md:items-center gap-8 mx-auto shadow-2xl  h-full overflow-hidden">
+            <div className="w-full h-full md:max-w-[50%] shadow-xl  order-2 md:order-1">
               <div className="flex flex-col h-full">
                 <EmptyOrderPos listItemChoosen={listItemChoosen} setListItemChoosen={handleSetListItemChoosen} />
                 <div className="flex-grow flex-row font-bold">
@@ -45,7 +45,7 @@ export default function PosPage() {
             </div>
             {/* LEFT Content End */}
             {/* RIGHT */}
-            <div className="w-full h-full text-[#3d444e] shadow-xl px-3">
+            <div className="w-full h-full text-[#3d444e] shadow-xl px-3 order-1 md:order-2">
               {/* RIGHT(NAVIGATION) */}
               <div className="flex items-center h-max">
                 {/* HOME TO DESK */}

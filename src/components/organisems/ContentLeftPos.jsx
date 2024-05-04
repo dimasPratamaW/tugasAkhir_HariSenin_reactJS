@@ -38,7 +38,7 @@ export default function ContentLeftPos() {
 
   return (
     <>
-      <div className="grid grid-cols-3 items-center w-full h-max text-sm">
+      <div className="grid grid-cols-2 md:grid-cols-3 items-center w-full h-max text-sm">
         {dataLeftContent.map((elm, i) => {
           return (
             <div key={i} className="w-full grid place-content-center py-4 px-3 border-[1px] border-solid border-black">
