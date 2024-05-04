@@ -1,64 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import TopPos from '../../components/organisems/TopPos';
-import NominalPos from '../../components/organisems/NominalPos';
-import SubmitPos from '../../components/organisems/SubmitPos';
-import ContentLeftPos from '../../components/organisems/ContentLeftPos';
-import EmptyOrderPos from '../../components/organisems/EmptyOrderPos';
-import ListItem from '../../components/organisems/ListItem';
-import Footer from '../../components/Footer';
+import { useEffect, useState } from "react";
+import NominalPos from "../../components/organisems/NominalPos";
+import SubmitPos from "../../components/organisems/SubmitPos";
+import ContentLeftPos from "../../components/organisems/ContentLeftPos";
+import EmptyOrderPos from "../../components/organisems/EmptyOrderPos";
+import ListItem from "../../components/organisems/ListItem";
+import RootLayouts from "../../layouts/RootLayouts";
+import Home from "../../assets/icon/home.png";
+import Desk from "../../assets/icon/desk.png";
 
 export default function PosPage() {
-  const itemsInStore = [
-    {
-      idItem: 1,
-      Name: "item Test 1",
-      Price: 99.75,
-      pictureItem: "../../assets/img/1.png"
-    },
-    {
-      idItem: 2,
-      Name: "item Test 2",
-      Price: 169.05,
-      pictureItem: "../../assets/img/1.png"
-    },
-    {
-      idItem: 3,
-      Name: "item Test 3",
-      Price: 99.75,
-      pictureItem: "../../assets/img/1.png"
-    },
-    {
-      idItem: 4,
-      Name: "item Test 4",
-      Price: 99.75,
-      pictureItem: "../../assets/img/1.png"
-    },
-    {
-      idItem: 5,
-      Name: "item Test 5",
-      Price: 169.05,
-      pictureItem: "../../assets/img/1.png"
-    },
-    {
-      idItem: 6,
-      Name: "item Test 6",
-      Price: 99.75,
-      pictureItem: "../../assets/img/1.png"
-    },
-    {
-      idItem: 7,
-      Name: "item Test 7",
-      Price: 169.05,
-      pictureItem: "../../assets/img/1.png"
-    },
-    {
-      idItem: 8,
-      Name: "item Test 8",
-      Price: 99.75,
-      pictureItem: "../../assets/img/1.png"
-    },
-  ];
-
   const [listItemChoosen, setItemsChoose] = useState([]);
 
   function onClick(item) {
@@ -76,63 +26,56 @@ export default function PosPage() {
   }, [listItemChoosen]);
   return (
     <>
-      <div className="font-serif">
-        <TopPos />
-        <hr />
-        <div className="flex flex-row font-serif mt-20">
-          <div className="w-2/5 h-lvh block">
-            <div className="flex flex-col h-screen">
-              <EmptyOrderPos
-                listItemChoosen={listItemChoosen}
-                setListItemChoosen={handleSetListItemChoosen}
-              />
-              <div className="flex-grow flex-row font-bold">
-                <div className="bg-white h-full items-center justify-center flex flex-col">
-                  <ContentLeftPos />
-                  <div className="flex flex-row w-full h-full">
-                    <SubmitPos />
-                    <NominalPos />
+      <RootLayouts>
+        <div className="w-full h-screen mt-24">
+          <div className="container px-8 py-10 flex justify-center items-center gap-8 mx-auto shadow-2xl  h-full overflow-hidden">
+            <div className="w-full h-full max-w-[50%] shadow-xl">
+              <div className="flex flex-col h-full">
+                <EmptyOrderPos listItemChoosen={listItemChoosen} setListItemChoosen={handleSetListItemChoosen} />
+                <div className="flex-grow flex-row font-bold">
+                  <div className="bg-white h-full items-center justify-center flex flex-col">
+                    <ContentLeftPos />
+                    <div className="flex flex-row w-full h-full">
+                      <SubmitPos />
+                      <NominalPos />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          {/* LEFT Content End */}
-          {/* RIGHT */}
-          <div className="w-3/5 flex-col text-[#3d444e] ">
-            {/* RIGHT(NAVIGATION) */}
-            <div className="flex  items-center h-9 px-1">
-              {/* HOME TO DESK */}
-              <div className="h-9 me-auto">
-                <div className="flex items-center gap-3">
-                  <a href="#"><img className="h-9" src="icon/home.png" alt="" /></a>
+            {/* LEFT Content End */}
+            {/* RIGHT */}
+            <div className="w-full h-full text-[#3d444e] shadow-xl px-3">
+              {/* RIGHT(NAVIGATION) */}
+              <div className="flex items-center h-max">
+                {/* HOME TO DESK */}
+                <div className="flex justify-center gap-3 items-center py-2 px-3 w-max shadow-gray-300 shadow-lg  rounded-2xl mb-5">
+                  <a href="#">
+                    <img className="h-auto w-[20px]" src={Home} alt="home" />
+                  </a>
                   <p className="">&gt;</p>
-                  <div className="flex items-center gap-2">
-                    <a href="#"><img className="h-7" src="icon/desk.png" alt="" /></a>
+                  <div className=" grid place-items-center">
+                    <img className="w-[20px]" src={Desk} alt="desk" />
                     <p>Desk</p>
                   </div>
                 </div>
-              </div>
-              {/* SEARCH PRODUCT */}
-              {/* <div className="flex ">
+                {/* SEARCH PRODUCT */}
+                {/* <div className="flex ">
                 <input className="border-2 rounded-lg" type="search" placeholder=" Search Product" name="" id="" />
               </div> */}
-            </div>
-            {/* LIST PRODUCT */}
-            <div className="block">
-              <div className="bg-[#d9dade] h-full p-2 flex flex-col gap-2">
-                {/* LAYER 1 */}
-                <div className="flex gap-2 ">
-                  <ListItem itemsInStore={itemsInStore} onClick={onClick} />
+              </div>
+              {/* LIST PRODUCT */}
+              <div className="w-full h-max  shadow-gray-300 shadow-lg">
+                <div className="bg-[#d9dade] h-full p-2 gap-2">
+                  {/* LAYER 1 */}
+                  <ListItem onClick={onClick} />
                 </div>
               </div>
             </div>
+            {/* RIGHT */}
           </div>
-          {/* RIGHT */}
         </div>
-        {/* FOOTER */}
-        <Footer />
-      </div>
+      </RootLayouts>
     </>
   );
 }

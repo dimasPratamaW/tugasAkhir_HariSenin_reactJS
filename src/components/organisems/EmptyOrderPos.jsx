@@ -10,13 +10,12 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
     setCartItems(
       listItemChoosen.map((item) => ({
         ...item,
-        amount: 1
+        amount: 1,
       }))
     );
   }, [listItemChoosen]);
 
   const handleIncrement = (index) => {
-
     updatedCartItems[index].amount += 1;
     setCartItems(updatedCartItems);
   };
@@ -35,8 +34,6 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
     setListItemChoosen(updatedCartItems);
   };
 
-
-
   if (cartItems.length === 0) {
     return (
       <div className="flex-grow flex-row">
@@ -51,7 +48,7 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   }
 
   // Calculate total value for each item (amount * price)
-  const itemValues = cartItems.map(item => item.amount * item.Price);
+  const itemValues = cartItems.map((item) => item.amount * item.Price);
 
   // Sum up all the values in the array
   const totalValue = itemValues.reduce((acc, curr) => acc + curr, 0);
@@ -66,14 +63,24 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
             renderItem={(item, index) => (
               <List.Item
                 actions={[
-                  <Button key="decrement" onClick={() => handleDecrement(index)}>-</Button>,
+                  <Button key="decrement" onClick={() => handleDecrement(index)}>
+                    -
+                  </Button>,
                   <span key="amount">{item.amount}</span>,
-                  <Button key="increment" onClick={() => handleIncrement(index)}>+</Button>,
-                  <Button key="remove" onClick={() => handleRemoveItem(index)}>Remove</Button>
+                  <Button key="increment" onClick={() => handleIncrement(index)}>
+                    +
+                  </Button>,
+                  <Button key="remove" onClick={() => handleRemoveItem(index)}>
+                    Remove
+                  </Button>,
                 ]}
               >
                 <List.Item.Meta
-                  title={<a href="https://ant.design" className="font-bold">{item.Name}</a>}
+                  title={
+                    <a href="https://ant.design" className="font-bold">
+                      {item.Name}
+                    </a>
+                  }
                   description={<p className="font-bold">$ {item.Price}</p>}
                 />
               </List.Item>
