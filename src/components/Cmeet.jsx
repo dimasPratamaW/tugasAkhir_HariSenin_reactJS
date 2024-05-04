@@ -1,9 +1,9 @@
 import React from 'react'
 import arrow from "../assets/gambar/arrow.png";
-import arrow2 from "../assets/gambar/arrow2.png";
-import arrowsection from "../assets/gambar/arrowsection.png";
-import herogambar from '../assets/gambar/herogambar.png'
-import star from '../assets/gambar/star.png'
+import arrow2 from "../assets/gambar/arrow-2.png"; //ini
+import arrowsection from "../assets/gambar/arrow-section.png";
+import herogambar from '../assets/gambar/hero-gambar.png'
+import star from '../assets/gambar/start.png'
 
 
 const Cmeet = () => {
