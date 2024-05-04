@@ -13,42 +13,49 @@ export default function PosPage() {
       idItem: 1,
       Name: "item Test 1",
       Price: 99.75,
-      pictureItem: "../../assets/1.png"
+      pictureItem: "../../assets/img/1.png"
     },
     {
       idItem: 2,
       Name: "item Test 2",
-      Price: 169.05
+      Price: 169.05,
+      pictureItem: "../../assets/img/1.png"
     },
     {
       idItem: 3,
       Name: "item Test 3",
-      Price: 99.75
+      Price: 99.75,
+      pictureItem: "../../assets/img/1.png"
     },
     {
       idItem: 4,
       Name: "item Test 4",
-      Price: 99.75
+      Price: 99.75,
+      pictureItem: "../../assets/img/1.png"
     },
     {
       idItem: 5,
       Name: "item Test 5",
-      Price: 169.05
+      Price: 169.05,
+      pictureItem: "../../assets/img/1.png"
     },
     {
       idItem: 6,
       Name: "item Test 6",
-      Price: 99.75
+      Price: 99.75,
+      pictureItem: "../../assets/img/1.png"
     },
     {
       idItem: 7,
       Name: "item Test 7",
-      Price: 169.05
+      Price: 169.05,
+      pictureItem: "../../assets/img/1.png"
     },
     {
       idItem: 8,
       Name: "item Test 8",
-      Price: 99.75
+      Price: 99.75,
+      pictureItem: "../../assets/img/1.png"
     },
   ];
 
@@ -74,12 +81,12 @@ export default function PosPage() {
         <hr />
         <div className="flex flex-row font-serif mt-20">
           <div className="w-2/5 h-lvh block">
-            <div className="flex flex-col h-screen">
+            <div className="flex flex-1 flex-col h-screen">
               <EmptyOrderPos
                 listItemChoosen={listItemChoosen}
                 setListItemChoosen={handleSetListItemChoosen}
               />
-              <div className="flex-grow flex-row font-bold">
+              <div className="flex-1 flex-grow flex-row font-bold">
                 <div className="bg-white h-full items-center justify-center flex flex-col">
                   <ContentLeftPos />
                   <div className="flex flex-row w-full h-full">
