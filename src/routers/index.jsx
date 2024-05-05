@@ -3,9 +3,9 @@ import HomePage from "../pages/Home";
 import FAQPage from "../pages/FAQ";
 // import LoginPage from "../pages/Auth/login";
 import POSPage from "../pages/POS";
-import LoginPage from '../pages/Auth/login.jsx'
-import RegisterPage from '../pages/Auth/register.jsx'
-import ErrorPage from '../pages/Auth/errorPage.jsx'
+import LoginPage from '../pages/Auth/login'
+import RegisterPage from '../pages/Auth/register'
+import ErrorPage from '../pages/Auth/errorPage'
 
 
 export const router = createBrowserRouter([
