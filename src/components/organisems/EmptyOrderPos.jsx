@@ -55,7 +55,7 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
 
   return (
     <>
-      <div className=" flex-grow border-2 border-slate-300 px-3 max-h-[40%] overflow-scroll">
+      <div className=" flex-grow border-2 border-slate-300 px-3 min-h-[50%] overflow-scroll">
         <div className="bg-white justify-center ">
           <List
             itemLayout="horizontal"

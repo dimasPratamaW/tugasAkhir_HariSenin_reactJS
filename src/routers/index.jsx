@@ -6,6 +6,7 @@ import POSPage from "../pages/POS/index.jsx";
 import LoginPage from '../pages/Auth/login.jsx'
 import RegisterPage from '../pages/Auth/register.jsx'
 import ErrorPage from '../pages/Auth/errorPage.jsx'
+import ProductsPage from "../pages/Product/product.jsx";
 
 
 export const router = createBrowserRouter([
@@ -18,10 +19,10 @@ export const router = createBrowserRouter([
     path: "/faq",
     element: <FAQPage />,
   },
-  // {
-  //   path: "/login",
-  //   element: <LoginPage />,
-  // },
+  {
+    path: "/product",
+    element: <ProductsPage/>,
+  },
   {
     path: "/pos",
     element: <POSPage />,
