@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/Home";
-import FAQPage from "../pages/FAQ";
+import HomePage from "../pages/Home/index.jsx";
+import FAQPage from "../pages/FAQ/index.jsx";
 // import LoginPage from "../pages/Auth/login";
-import POSPage from "../pages/POS";
-import LoginPage from '../pages/Auth/login'
-import RegisterPage from '../pages/Auth/register'
-import ErrorPage from '../pages/Auth/errorPage'
+import POSPage from "../pages/POS/index.jsx";
+import LoginPage from '../pages/Auth/login.jsx'
+import RegisterPage from '../pages/Auth/register.jsx'
+import ErrorPage from '../pages/Auth/errorPage.jsx'
 
 
 export const router = createBrowserRouter([

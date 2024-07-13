@@ -12,6 +12,7 @@
   "dependencies": {
     "@ant-design/icons": "^5.3.6",
     "antd": "^5.16.4",
+    "axios": "^1.7.2",
     "eslint-plugin-json": "^3.1.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.4",
