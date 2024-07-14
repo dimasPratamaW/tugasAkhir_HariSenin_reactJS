@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const { Option } = Select;
 
-export default function Update_Product() {
+export default function Delete_Product() {
     const initialFormState = {
         product_name: "",
         product_picture: "",
@@ -17,25 +17,9 @@ export default function Update_Product() {
     const [products, setProducts] = useState([]);
     const [choosenIdProduct, setChoosenProduct] = useState("");
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormValues({
-            ...formValues,
-            [name]: value,
-        });
-    };
-
-    const handlePriceChange = (value) => {
-        setFormValues({
-            ...formValues,
-            product_price: value,
-        });
-    };
-
     const handleSelectChange = (value) => {
         const selectedProduct = products.find(product => product.product_id === value);
         setChoosenProduct(selectedProduct.product_id);
-        console.log(selectedProduct,"selectedProduct")
         setFormValues({
             product_name: selectedProduct.product_name,
             product_picture: selectedProduct.product_picture || "", // Handle case where product_picture might not be present
@@ -43,16 +27,13 @@ export default function Update_Product() {
         });
     };
 
-    const updateProduct = async (event) => {
+    const deleteProduct = async (event) => {
         event.preventDefault();
-        console.log("Form submitted");
-        console.log(choosenIdProduct,"choosen id product")
+        console.log(choosenIdProduct, "choosen id product");
 
-        const id_user = "325ef718-4574-447f-8849-839f91af2b39";
 
         try {
-            console.log("Making API request with:", { ...formValues, id_user });
-            const response = await api.put(`/product/${choosenIdProduct}`, { ...formValues, id_user });
+            const response = await api.delete(`/product/${choosenIdProduct}`);
             console.log("API response:", response);
 
             // Reset form values to initial state
@@ -108,10 +89,10 @@ export default function Update_Product() {
     if (isSuccess) {
         return (
             <Result
-                title="Your product has been updated"
+                title="Your operation has been executed"
                 extra={
                     <Button type="primary" key="console" onClick={() => setIsSuccess(false)}>
-                        Update Another Product
+                        Delete Another Product
                     </Button>
                 }
             />
@@ -121,7 +102,7 @@ export default function Update_Product() {
     return (
         <RootLayouts>
             <div className="mt-5 min-h-[50%]">
-                <div>
+                <div className="mb-10">
                     <h2>Products List:</h2>
                     <Select
                         style={{ width: '100%' }}
@@ -135,41 +116,16 @@ export default function Update_Product() {
                             </Option>
                         ))}
                     </Select>
+                    <div className="mt-5 mb-5">
 
+                    <h2>Selected Product Details:</h2>
+                    <p><strong>Name:</strong> {formValues.product_name}</p>
+                    <p><strong>Price:</strong> Rp{formValues.product_price}</p>
+                    <p><strong>Picture:</strong> {formValues.product_picture}</p>
+                    </div>
                 </div>
                 <Space />
-                <form onSubmit={updateProduct}>
-                <div className="mb-5 mt-2">
-
-                    <h2>Products Name:</h2>
-                    <Input
-                        size="large"
-                        placeholder="Name of Product"
-                        name="product_name"
-                        value={formValues.product_name}
-                        onChange={handleInputChange}
-                    />
-                    <h2>Link Image Product</h2>
-                    <Input
-                        size="large"
-                        placeholder="Link to Product Picture"
-                        name="product_picture"
-                        value={formValues.product_picture}
-                        onChange={handleInputChange}
-                    />
-                    <h2>Products Price:</h2>
-                    <InputNumber
-                        className="w-max"
-                        size="large"
-                        placeholder="100XXX"
-                        name="product_price"
-                        value={formValues.product_price}
-                        onChange={handlePriceChange}
-                    />
-                </div>
-                    <br/>
-                    <Button className="bg-[#604058] rounded-md w-full text-white" type="submit" onClick={updateProduct}>Update Your Product</Button>
-                </form>
+                <Button className="bg-[#604058] rounded-md w-full text-white" type="button" onClick={deleteProduct}>Delete Product</Button>
             </div>
         </RootLayouts>
     );

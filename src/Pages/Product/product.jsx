@@ -4,6 +4,7 @@ import RootLayouts from "../../layouts/RootLayouts.jsx";
 import { useState } from "react";
 import Add_Product from "./add_product.jsx";
 import Update_Product from "./update_product.jsx";
+import Delete_Product from "./delete_product.jsx";
 
 export default function ProductsPage() {
 
@@ -23,8 +24,8 @@ export default function ProductsPage() {
         },
         {
             key: '3',
-            label: 'Tab 3',
-            children: 'Content of Tab Pane 3',
+            label: 'Delete Product',
+            children: <Delete_Product></Delete_Product>,
         },
     ];
 

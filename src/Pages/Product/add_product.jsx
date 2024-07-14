@@ -75,6 +75,8 @@ export default function Add_Product() {
         <RootLayouts>
             <div className="mt-5 min-h-[50%]">
                 <form onSubmit={addingProduct}>
+                <div className="mb-5 mt-5">
+
                 <h2>Name Product</h2>
                     <Input
                         size="large"
@@ -100,7 +102,7 @@ export default function Add_Product() {
                         value={formValues.product_price}
                         onChange={handlePriceChange}
                     />
-                    <h1>HALO INI TESTING</h1>
+                </div>
                     <Button className="bg-[#604058] rounded-md w-full text-white" type="submit" onClick={addingProduct}>Add Your Product</Button>
                 </form>
             </div>
