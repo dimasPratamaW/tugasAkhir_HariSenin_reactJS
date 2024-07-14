@@ -4,7 +4,6 @@ import { List, Button } from "antd";
 
 export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   const [cartItems, setCartItems] = useState([]);
-  let updatedCartItems = [...cartItems];
 
   useEffect(() => {
     setCartItems(
@@ -16,11 +15,13 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   }, [listItemChoosen]);
 
   const handleIncrement = (index) => {
+    const updatedCartItems = [...cartItems];
     updatedCartItems[index].amount += 1;
     setCartItems(updatedCartItems);
   };
 
   const handleDecrement = (index) => {
+    const updatedCartItems = [...cartItems];
     if (updatedCartItems[index].amount > 0) {
       updatedCartItems[index].amount -= 1;
       setCartItems(updatedCartItems);
@@ -28,9 +29,9 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   };
 
   const handleRemoveItem = (index) => {
+    const updatedCartItems = [...cartItems];
     updatedCartItems.splice(index, 1);
     setCartItems(updatedCartItems);
-    // Update listItemChoosen in the main file
     setListItemChoosen(updatedCartItems);
   };
 
@@ -48,15 +49,15 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
   }
 
   // Calculate total value for each item (amount * price)
-  const itemValues = cartItems.map((item) => item.amount * item.Price);
+  const itemValues = cartItems.map((item) => item.amount * item.product_price);
 
   // Sum up all the values in the array
   const totalValue = itemValues.reduce((acc, curr) => acc + curr, 0);
 
   return (
     <>
-      <div className=" flex-grow border-2 border-slate-300 px-3 max-h-[40%] overflow-scroll">
-        <div className="bg-white justify-center ">
+      <div className="flex-grow border-2 border-slate-300 px-3 min-h-[50%] overflow-scroll">
+        <div className="bg-white justify-center">
           <List
             itemLayout="horizontal"
             dataSource={cartItems}
@@ -77,11 +78,11 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
               >
                 <List.Item.Meta
                   title={
-                    <a href="https://ant.design" className="font-bold">
-                      {item.Name}
-                    </a>
+                    <span className="font-bold">
+                      {item.product_name}
+                    </span>
                   }
-                  description={<p className="font-bold">$ {item.Price}</p>}
+                  description={<p className="font-bold">Rp{item.product_price}</p>}
                 />
               </List.Item>
             )}
@@ -91,7 +92,7 @@ export default function EmptyOrderPos({ listItemChoosen, setListItemChoosen }) {
       <div className="bg-lime-200 border-2 border-black sticky bottom-0 z-10">
         <div className="flex-row justify-items-end items-end ml-2">
           <div className="font-bold text-2xl">Total</div>
-          <div className="font-bold text-xl">$ {totalValue}</div>
+          <div className="font-bold text-xl">Rp{totalValue}</div>
         </div>
       </div>
     </>
