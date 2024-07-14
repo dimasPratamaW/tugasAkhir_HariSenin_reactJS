@@ -33,11 +33,17 @@ export default function NavbarNew() {
                 Listing Product
               </Link>
             </li>
+            <li className="my-5 md:mx-5">
+              <Link to="/pos" className="font-semibold">
+                Order
+              </Link>
+            </li>
             <li className="pt-10 pb-6 border-t-[1px] md:pb-0 md:pt-0 md:border-t-0 solid border-gray-700 w-[100px]">
               <Link className="px-5 bg-white py-3 rounded-xl font-semibold shadow-xl" to="/login">
                 Sign In
               </Link>
             </li>
+            
           </ul>
         </nav>
 
