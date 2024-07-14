@@ -3,6 +3,7 @@ import api from "../../api.js";
 import RootLayouts from "../../layouts/RootLayouts.jsx";
 import { useState } from "react";
 import Add_Product from "./add_product.jsx";
+import Update_Product from "./update_product.jsx";
 
 export default function ProductsPage() {
 
@@ -17,8 +18,8 @@ export default function ProductsPage() {
         },
         {
             key: '2',
-            label: 'Tab 2',
-            children: 'Content of Tab Pane 2',
+            label: 'Update Product',
+            children: <Update_Product></Update_Product>,
         },
         {
             key: '3',

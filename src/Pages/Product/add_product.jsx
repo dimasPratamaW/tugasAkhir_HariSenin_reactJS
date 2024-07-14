@@ -75,6 +75,7 @@ export default function Add_Product() {
         <RootLayouts>
             <div className="mt-5 min-h-[50%]">
                 <form onSubmit={addingProduct}>
+                <h2>Name Product</h2>
                     <Input
                         size="large"
                         placeholder="Name of Product"
@@ -82,6 +83,7 @@ export default function Add_Product() {
                         value={formValues.product_name}
                         onChange={handleInputChange}
                     />
+                    <h2>Link Image Product</h2>
                     <Input
                         size="large"
                         placeholder="Link to Product Picture"
@@ -89,6 +91,7 @@ export default function Add_Product() {
                         value={formValues.product_picture}
                         onChange={handleInputChange}
                     />
+                    <h2>Products Price:</h2>
                     <InputNumber
                         className="w-max"
                         size="large"
@@ -98,7 +101,7 @@ export default function Add_Product() {
                         onChange={handlePriceChange}
                     />
                     <h1>HALO INI TESTING</h1>
-                    <Button className="bg-[#604058] rounded-md w-full" type="submit" onClick={addingProduct}>Add Your Product</Button>
+                    <Button className="bg-[#604058] rounded-md w-full text-white" type="submit" onClick={addingProduct}>Add Your Product</Button>
                 </form>
             </div>
         </RootLayouts>
